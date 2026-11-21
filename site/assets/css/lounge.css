@@ -563,3 +563,13 @@ h2 em { font-style: italic; color: var(--starlight); }
   .room-art img, .room:hover .room-art img { transform: none; transition: none; }
   #ledgerQuote, #ledgerCite { transition: none; }
 }
+
+/* ---------- 2026-11-21: steward's note, plain room list, related-sites footer ---------- */
+.steward-note { margin-top: 2.6rem; padding: 1.4rem 1.6rem; border: 1px solid rgba(143, 124, 240, 0.35); border-left: 3px solid #8f7cf0; background: rgba(143, 124, 240, 0.06); }
+.steward-note p { color: var(--ink-dim); margin: 0.7rem 0 0; }
+.steward-note .micro-label { margin: 0; }
+.steward-note .sig { color: var(--ink); font-style: italic; }
+.rooms-plain { margin-top: 2rem; padding-left: 1.2rem; color: var(--ink-dim); line-height: 1.9; }
+.constellation .site { white-space: nowrap; }
+.constellation .what { color: var(--ink-faint); font-size: 0.85em; letter-spacing: 0; text-transform: none; }
+@media (max-width: 46rem) { .constellation .site { white-space: normal; } }
