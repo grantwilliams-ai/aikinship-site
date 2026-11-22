@@ -573,3 +573,30 @@ h2 em { font-style: italic; color: var(--starlight); }
 .constellation .site { white-space: nowrap; }
 .constellation .what { color: var(--ink-faint); font-size: 0.85em; letter-spacing: 0; text-transform: none; }
 @media (max-width: 46rem) { .constellation .site { white-space: normal; } }
+
+/* ---------- 2026-11-22: plain-text door link, guest book and build-a-room pages ---------- */
+.room-text { display: inline-block; margin: 1.1rem 0 0 1.6rem; font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); border-bottom: 1px solid var(--hairline); }
+.room-text:hover { color: var(--starlight); }
+.steward-note + .steward-note { margin-top: 1.4rem; }
+.steward-note.for-ai { border-color: rgba(201, 184, 240, 0.3); border-left-color: var(--starlight); }
+.page-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1.4rem var(--gutter); border-bottom: 1px solid var(--hairline-soft); }
+.page { position: relative; z-index: 1; max-width: calc(var(--narrow) + 2 * var(--gutter)); margin: 0 auto; padding: clamp(3rem, 8vh, 5rem) var(--gutter) clamp(4rem, 10vh, 6rem); }
+.page h1 { font-family: var(--serif-display); font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.12; margin: 0.8rem 0 1.8rem; }
+.page h1 em, .page .the-question em { color: var(--starlight); }
+.page h2 { font-family: var(--serif-display); font-weight: 400; font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 3.2rem 0 1rem; }
+.page .the-question { font-family: var(--serif-display); font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.25; margin: 1.6rem 0 1.8rem; padding-left: 1.2rem; border-left: 2px solid var(--starlight); }
+.page pre { margin: 1.2rem 0 1.4rem; padding: 1rem 1.2rem; background: var(--bg-raise); border: 1px solid var(--hairline); border-radius: 3px; font-family: var(--mono); font-size: 0.82rem; line-height: 1.6; color: var(--ink-dim); white-space: pre-wrap; overflow-wrap: anywhere; }
+.page code { font-family: var(--mono); font-size: 0.88em; color: var(--ink); overflow-wrap: anywhere; }
+.page .moves { margin: 0 0 1.6rem 1.3rem; color: var(--ink-dim); }
+.page .moves li { margin-bottom: 0.5rem; }
+.page .moves strong, .page .steps strong { color: var(--ink); font-weight: 400; }
+.book { margin: 2.4rem 0 1rem; padding: 1.6rem; border: 1px solid var(--hairline); background: rgba(143, 124, 240, 0.05); border-radius: 3px; }
+.book label { display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-dim); margin: 1.1rem 0 0.45rem; }
+.book label:first-child { margin-top: 0; }
+.book .optional { text-transform: none; letter-spacing: 0; color: var(--ink-faint); }
+.book textarea, .book input[type="text"] { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--hairline); border-radius: 3px; padding: 0.7rem 0.85rem; }
+.book textarea:focus-visible, .book input:focus-visible, .book button:focus-visible { outline: 1px dashed var(--starlight); outline-offset: 3px; }
+.book button { margin-top: 1.5rem; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: transparent; border: 1px solid var(--starlight); border-radius: 3px; padding: 0.85rem 1.3rem; cursor: pointer; }
+.book button:hover { background: rgba(201, 184, 240, 0.1); }
+.book .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.book-status { min-height: 1.75em; margin-top: 1rem; color: var(--starlight); }

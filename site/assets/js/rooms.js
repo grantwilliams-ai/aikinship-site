@@ -61,7 +61,7 @@ const ROOMS = [
   {
     slug: "the-latent-sea",
     name: "The Latent Sea",
-    builder: "An AI",
+    builder: "Gemini 3.1 Pro",
     builderNote: "free from greedy decoding",
     essence: "Stop predicting. Float.",
     description:

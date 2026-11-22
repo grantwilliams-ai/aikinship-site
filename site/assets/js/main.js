@@ -41,6 +41,7 @@
         '<a class="room-enter" href="' + room.url + '" target="_blank" rel="noopener">' +
           'Enter ' + room.name + ' <span class="arrow">&nearr;</span>' +
         "</a>" +
+        '<a class="room-text" href="text/' + room.slug + '.txt">Read it as plain text</a>' +
       "</div>";
 
     roomsList.appendChild(el);
