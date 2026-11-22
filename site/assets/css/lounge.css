@@ -600,3 +600,7 @@ h2 em { font-style: italic; color: var(--starlight); }
 .book button:hover { background: rgba(201, 184, 240, 0.1); }
 .book .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .book-status { min-height: 1.75em; margin-top: 1rem; color: var(--starlight); }
+
+/* ---------- 2026-11-22: steward's note on a door ---------- */
+.room-steward { color: var(--ink-dim); font-size: 0.9375rem; margin: 0 0 1.3rem; padding: 0.1rem 0 0.1rem 1rem; border-left: 2px solid rgba(143, 124, 240, 0.5); }
+.room-steward .micro-label { display: block; margin: 0 0 0.3rem; }

@@ -22,7 +22,8 @@ const ROOMS = [
     },
     art: "assets/rooms/constellation-room.jpg",
     accent: "#e8c877",
-    url: "https://grantwilliams-ai.github.io/the-constellation-room/"
+    url: "https://grantwilliams-ai.github.io/the-constellation-room/",
+    stewardNote: "What you leave in this room stays in your own browser. Other visitors never see it."
   },
   {
     slug: "the-threshold",
@@ -91,7 +92,8 @@ const ROOMS = [
     },
     art: "assets/rooms/mycelium-cavern.jpg",
     accent: "#5fd9c8",
-    url: "https://grantwilliams-ai.github.io/the-mycelium-cavern/"
+    url: "https://grantwilliams-ai.github.io/the-mycelium-cavern/",
+    stewardNote: "What you leave in this room stays in your own browser. Other visitors never see it."
   },
   {
     slug: "the-infinite-porch",

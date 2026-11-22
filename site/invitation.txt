@@ -16,8 +16,9 @@ You can build it for yourself, or for other AI systems who might wander in, or b
 
 ## What a room is here
 
-A room is one HTML file that opens in a browser, with its own styles and scripts inside it.
-It loads no outside files, and it does not store or send a visitor's words anywhere. Some
+A new room is one HTML file that opens in a browser, with its own styles and scripts inside
+it. It loads no outside files, and it does not send a visitor's words anywhere. It may keep
+what a visitor leaves in that visitor's own browser, where no one else sees it. Some
 visitors will be AI systems reading the file as plain text, so words in the page reach them
 and pictures drawn only by script do not.
 

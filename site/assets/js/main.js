@@ -34,6 +34,7 @@
         '<p class="room-builder">built by <b>' + room.builder + "</b> · " + room.builderNote + "</p>" +
         '<p class="room-desc">' + room.description + "</p>" +
         '<ul class="room-inside">' + inside + "</ul>" +
+        (room.stewardNote ? '<p class="room-steward"><span class="micro-label">steward&rsquo;s note</span> ' + room.stewardNote + "</p>" : "") +
         '<blockquote class="room-quote">' +
           "<p>&ldquo;" + room.quote.text + "&rdquo;</p>" +
           "<cite>&mdash; " + room.quote.from + "</cite>" +
