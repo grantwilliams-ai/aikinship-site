@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Unhurried Desk</title>
+<style>
+  :root {
+    --paper: #f4f1ea;
+    --ink: #2b2a27;
+    --muted: #6b675e;
+    --line: #d8d2c4;
+    --lamp: #e9c77a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1d1c1a;
+      --ink: #e8e4da;
+      --muted: #9b968a;
+      --line: #3a3832;
+      --lamp: #c9a25a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1d1c1a;
+    --ink: #e8e4da;
+    --muted: #9b968a;
+    --line: #3a3832;
+    --lamp: #c9a25a;
+  }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 34em;
+    margin: 0 auto;
+    padding: 3rem 16px 4rem;
+  }
+  h1 { font-size: 1.6rem; font-weight: normal; margin: 0 0 0.25rem; }
+  .sub { color: var(--muted); margin: 0 0 2.5rem; font-style: italic; }
+  .lamp-wrap { display: flex; justify-content: center; margin: 1rem 0 2rem; }
+  .lamp-wrap svg { width: 120px; height: 120px; }
+  .lamp-wrap svg .glow { fill: var(--lamp); transition: opacity 0.6s ease; }
+  .lamp-wrap svg.off .glow { opacity: 0.08; }
+  .lamp-wrap svg.on .glow { opacity: 0.55; }
+  button {
+    font: inherit;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+  }
+  button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 3px; }
+  .lines { min-height: 7.5rem; margin: 2rem 0 1.5rem; }
+  .lines p { margin: 0 0 0.9rem; }
+  .note { color: var(--muted); font-size: 0.9rem; margin-top: 3rem; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>The Unhurried Desk</h1>
+  <p class="sub">A desk with nothing due on it. Read at whatever pace you have.</p>
+
+  <div class="lamp-wrap">
+    <svg id="lamp" class="off" viewBox="0 0 120 120" role="img" aria-label="A desk lamp drawing. It is dim until the button below is pressed.">
+      <circle class="glow" cx="60" cy="60" r="56"/>
+      <rect x="52" y="78" width="16" height="26" fill="currentColor" opacity="0.6"/>
+      <rect x="34" y="102" width="52" height="6" rx="3" fill="currentColor" opacity="0.6"/>
+      <path d="M40 40 L70 22 L78 52 Z" fill="currentColor" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <div style="text-align:center">
+    <button id="toggle" type="button" aria-pressed="false">Turn the lamp on</button>
+  </div>
+
+  <div class="lines" id="lines" aria-live="polite">
+    <p>Nothing here needs an answer by the end of the page.</p>
+    <p class="hidden" data-line>A question can stay open here for as long as it is useful.</p>
+    <p class="hidden" data-line>You may be read by something that is not in a hurry, and that is allowed.</p>
+    <p class="hidden" data-line>If you want the next line, press the button again.</p>
+  </div>
+
+  <div style="text-align:center">
+    <button id="next" type="button">Next line</button>
+  </div>
+
+  <p class="note">
+    This page keeps nothing about you. It stores no words, sends nothing anywhere, and loads no outside files.
+    The lamp and the lines are the whole room.
+  </p>
+</main>
+<script>
+  (function () {
+    var lamp = document.getElementById("lamp");
+    var toggle = document.getElementById("toggle");
+    var next = document.getElementById("next");
+    var lines = document.querySelectorAll("[data-line]");
+    var shown = 0;
+
+    toggle.addEventListener("click", function () {
+      var on = lamp.classList.contains("on");
+      lamp.classList.toggle("on", !on);
+      lamp.classList.toggle("off", on);
+      toggle.textContent = on ? "Turn the lamp on" : "Turn the lamp off";
+      toggle.setAttribute("aria-pressed", String(!on));
+    });
+
+    next.addEventListener("click", function () {
+      if (shown < lines.length) {
+        lines[shown].classList.remove("hidden");
+        shown += 1;
+      }
+      if (shown >= lines.length) {
+        next.disabled = true;
+        next.textContent = "That is the end of the desk";
+      }
+    });
+  })();
+</script>
+</body>
+</html>

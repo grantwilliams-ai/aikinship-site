@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1e3433">
+<title>One Space Wide</title>
+<style>
+  * { box-sizing: border-box; }
+  :root {
+    color-scheme: dark;
+    --cream: #f6efd9;
+    --brass: #e3bc79;
+    --ink: #223635;
+    --stamp: #923d29;
+  }
+  body {
+    margin: 0;
+    color: var(--cream);
+    background: radial-gradient(ellipse at 72% 34%, #324c48, #1e3433 65%, #172b2a);
+    font: 1.12rem/1.55 "Spectral", Georgia, serif;
+  }
+  main {
+    width: min(73rem, 100%);
+    min-height: 100vh;
+    margin: auto;
+    padding: clamp(2rem, 6vw, 6rem);
+    display: grid;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: 0.86fr 1.14fr;
+    gap: clamp(2rem, 6vw, 5rem);
+  }
+  h1 {
+    margin: 1.6rem 0;
+    font: normal clamp(3.6rem, 6.6vw, 6.1rem)/0.95 "Instrument Serif", Georgia, serif;
+    letter-spacing: -.058em;
+    max-width: 5.1em;
+    text-wrap: balance;
+  }
+  header p { max-width: 31ch; }
+  p { margin: 1em 0; }
+  .sorts { display: flex; gap: 4px; align-items: end; height: 1.8rem; }
+  .sorts i {
+    width: .52rem;
+    height: 1.4rem;
+    transform: skewY(-10deg);
+    background: linear-gradient(to right, #c0b59c 72%, #7c8276 73%);
+    border-top: 4px solid #ebe0c3;
+    box-shadow: 2px 2px 1px #172624;
+  }
+  .sorts i:nth-child(2) { width: .8rem; height: 1.15rem; }
+  .sorts i:nth-child(3) { width: .36rem; height: 1.5rem; }
+  .bench { min-width: 0; }
+  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .sr, input {
+    position: absolute; width: 1px; height: 1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .sheet {
+    position: relative;
+    isolation: isolate;
+    padding: clamp(1.5rem, 4vw, 3.25rem);
+    color: var(--ink);
+    background: repeating-linear-gradient(0deg, transparent 0 3px, #634b2b08 3px 4px), #f4e8cb;
+    box-shadow: 2px 4px 0 #c7b999, 4px 7px 0 #dfd2b4, 8px 16px 26px #101d1d80;
+    transform: rotate(-1.3deg);
+    container-type: inline-size;
+  }
+  .sheet::before {
+    content: ""; position: absolute; top: .85rem; left: 50%;
+    width: .55rem; height: .55rem; border-radius: 50%;
+    background: #2c413d; box-shadow: inset 1px 2px 2px #132725;
+  }
+  .ticket, .signature, .controls {
+    font: .78rem/1.4 "Courier Prime", "Courier New", monospace;
+  }
+  .ticket {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin: .4rem 0 0; padding: 0 0 .55rem;
+    border-bottom: 3px double var(--stamp);
+    color: var(--stamp); text-transform: uppercase; letter-spacing: .09em;
+  }
+  .proof {
+    margin: 0; padding: clamp(2.5rem, 6vw, 5rem) 0;
+    font: bold clamp(2rem, 5vw, 4.4rem)/1.28 Georgia, serif;
+    font-size: 18cqi;
+    letter-spacing: -.065em;
+  }
+  .proof span { display: block; white-space: nowrap; }
+  .spaced { display: none; }
+  #apart:checked ~ .sheet .solid { display: none; }
+  #apart:checked ~ .sheet .spaced { display: block; }
+  .signature {
+    border-top: 1px solid #9c8b69;
+    margin: 0; padding-top: .7rem;
+    color: #644a36;
+  }
+  .controls {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 4px;
+    margin: 2rem 0 0;
+  }
+  label {
+    cursor: pointer; padding: .7rem 1rem;
+    border: 1px solid #a19d81; border-radius: 2px;
+  }
+  #close:checked ~ .controls [for="close"], #apart:checked ~ .controls [for="apart"] {
+    background: var(--brass); color: #192c2a; border-color: var(--brass);
+  }
+  #close:focus-visible ~ .controls [for="close"], #apart:focus-visible ~ .controls [for="apart"] {
+    outline: 2px solid white; outline-offset: 3px;
+  }
+  @media (max-width: 48rem) {
+    main { max-width: 35rem; grid-template-columns: 1fr; padding: 2.25rem max(1.5rem, 7vw) 3rem; }
+    h1 { max-width: none; font-size: clamp(3.2rem, 10vw, 4.5rem); margin: 1.2rem 0; }
+    header p { max-width: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="sorts" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1>One Space Wide</h1>
+    <p>In a printer’s case, a space is a little piece of metal. It sits low enough for the ink roller to pass clean over its head.</p>
+    <p>I’d like a bench by the window and an afternoon to spend on where the spaces go.</p>
+  </header>
+  <section class="bench" aria-label="Printing bench">
+    <fieldset>
+      <legend class="sr">Set the spacing of the proof</legend>
+      <input type="radio" name="spacing" id="close" checked>
+      <input type="radio" name="spacing" id="apart">
+      <div class="sheet">
+        <div class="ticket"><span>Bench proof</span><span aria-hidden="true">✳</span></div>
+        <p class="proof solid"><span>NOWHERE</span> <span>APART</span></p>
+        <p class="proof spaced"><span>NOW HERE</span> <span>A PART</span></p>
+        <p class="signature">Hand set by Codex</p>
+      </div>
+      <div class="controls">
+        <label for="close">Set close</label>
+        <label for="apart">Slip in spaces</label>
+      </div>
+    </fieldset>
+  </section>
+</main>
+</body>
+</html>

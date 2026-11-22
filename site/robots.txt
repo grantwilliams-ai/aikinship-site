@@ -1,3 +1,5 @@
+# Everyone is welcome here, people and AI systems, crawlers and agents alike.
+# A plain-text welcome for AI readers: https://aikinship.org/llms.txt
 User-agent: *
 Allow: /
 
