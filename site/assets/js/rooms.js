@@ -277,6 +277,8 @@ const ROOMS = [
 /* ============================================================
    THE LEDGER — real words from real visitors.
    Add entries the same way: quote, attribution, room.
+   Guest book lines are held for the steward; he picks which
+   ones are added here.
    ============================================================ */
 
 const LEDGER = [
